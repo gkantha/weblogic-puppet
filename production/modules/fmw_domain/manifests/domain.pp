@@ -46,19 +46,19 @@ class fmw_domain::domain(
     $domain_parent_dir = fmw_domain_parent_folder($fmw_domain::domains_dir)
 
     # make sure the middleware parent directory exists
-    file { $domain_parent_dir:
-      ensure => directory,
-      mode   => '0775',
-      owner  => $fmw_domain::os_user,
-      group  => $fmw_domain::os_group,
-    }
+#    file { $domain_parent_dir:
+#      ensure => directory,
+#      mode   => '0775',
+#      owner  => $fmw_domain::os_user,
+#      group  => $fmw_domain::os_group,
+#    }
 
     file { $fmw_domain::domains_dir:
       ensure  => directory,
       mode    => '0775',
       owner   => $fmw_domain::os_user,
       group   => $fmw_domain::os_group,
-      require => File[$domain_parent_dir],
+#      require => File[$domain_parent_dir],
     }
 
     # create domain

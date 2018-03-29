@@ -14,10 +14,10 @@ class fmw_wls::install(
   unless $::kernel in ['windows', 'Linux', 'SunOS'] {
     fail('Not supported Operation System, please use it on windows, linux or solaris host')
   }
-  if ( $java_home_dir == undef or is_string($java_home_dir) == false ) {
+  if ( $java_home_dir == undef  ) {
     fail("java_home_dir parameter cannot be empty ${java_home_dir}")
   }
-  if ( $source_file == undef or is_string($source_file) == false ) {
+  if ( $source_file == undef  ) {
     fail('source_file parameter cannot be empty')
   }
 
